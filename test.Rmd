@@ -1,0 +1,37 @@
+---
+title: "Programmin Assigment 2"
+author: "Sertinell"
+date: "16 October 2015"
+output: html_document
+---
+
+Testing my function
+
+* Create a new matrix:
+```{r}
+source("cachematrix.R")
+m <- matrix(nrow = 3, ncol = 3, c(1,2,3, 0,1,4, 5,6,0))
+m
+```
+
+* Create a CacheMatrix:
+```{r}
+mCached <- makeCacheMatrix(m)
+```
+
+* Invert it and cache the inverse:
+```{r}
+mi <- cacheSolve(mCached)
+mi
+```
+
+* Check if it is the "real inverse"
+```{r}
+mi %*% m
+```
+
+* Get the inverse from the cache
+```{r}
+mi <- cacheSolve(mCached)
+mi
+```
